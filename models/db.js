@@ -10,9 +10,9 @@ mongoose.connect(process.env.MONGODB_URI, (err) => {
     else { console.log('Error in MongoDB connection : ' + JSON.stringify(err, undefined, 2)); }
 });
 
-require('./user.model');  
-require('./wish_list.model');  
-require('./order.model');
-require('./order_success.model');   
-require('./address.model'); 
-require('./delivery_person.model'); 
+require('./user.model');   
+require('./bidding.model'); 
+require('./biddingTemp.model'); 
+require('./biddingList.model'); 
+require('./payment.model'); 
+require('./amounts.model'); 

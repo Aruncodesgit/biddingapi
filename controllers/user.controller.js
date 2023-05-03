@@ -9,23 +9,16 @@ const bcrypt = require('bcryptjs');
 const e = require('express');
 
 const jwt = require('jsonwebtoken');
-
-let transporter = nodemailer.createTransport({
-    service: 'gmail',
-    auth: {
-        user: 'arun70840@gmail.com',
-        pass: 'evwphfaaowaeyxrm',
-    }
-})
-
+ 
 // post register
-module.exports.register = async (req, res, next) => {
+module.exports.user = async (req, res, next) => {
 
     var user = new User();
     user.fullName = req.body.fullName;  
+    user.phone = req.body.phone;  
     user.email = req.body.email;
-    user.password = req.body.password;  
-    user.role = req.body.role; 
+    user.password = req.body.password;   
+    user.address = req.body.address;   
     const salt = await bcrypt.genSalt(10);
     user.password = await bcrypt.hash(user.password, salt);
     user.save((err, doc) => {
@@ -34,7 +27,7 @@ module.exports.register = async (req, res, next) => {
             } 
             else {
                 if (err.code == 11000)
-                    res.status(422).send(['Duplicate name adrress or Emp. ID found.']);
+                    res.status(422).send(['Duplicate email or Emp. ID found.']);
 
                 else
                     return next(err);
@@ -42,24 +35,7 @@ module.exports.register = async (req, res, next) => {
         }); 
 
 }
-
-module.exports.updateRegister = (req, res, next) => {
-    if (!ObjectId.isValid(req.params.id))
-        return res.status(400).send(` No record found with given id : ${req.params.id}`);
-
-    var user = {
-        fullName:req.body.fullName, 
-        phone:req.body.phone 
-    };
-
-
-
-    User.findByIdAndUpdate(req.params.id, { $set: user }, { new: true }, (err, doc) => {
-        if (!err) { res.send(doc); }
-        else { console.log('Error in employee update:' + JSON.stringfy(err, undefined, 2)); }
-    });
-}
-
+ 
 
 module.exports.userDetails = async (req, res, next) => {  
     User.find((err, docs) => {
@@ -68,20 +44,8 @@ module.exports.userDetails = async (req, res, next) => {
     });
 }
 
-
-// get by Id 
-module.exports.registerGetById = (req, res, next) => {
-    if (!ObjectId.isValid(req.params.id))
-        return res.status(400).send(`No record found with given id: ${req.params.id}`)
-
-    User.findById(req.params.id, (err, docs) => {
-        if (!err) { res.send(docs); }
-        else { console.log('Error' + Json.stringfy(err, undefined, 2)); }
-    });
-}
-
-
-
+ 
+ 
 
 // login authenticate
 module.exports.authenticate = (req, res, next) => {
@@ -93,7 +57,7 @@ module.exports.authenticate = (req, res, next) => {
         // registered user
         else if (user) { 
             
-            res.status(200).json({ _id: user._id, fullName: user.fullName, role: user.role, "token": user.generateJwt() });
+            res.status(200).json({ _id: user._id, fullName: user.fullName,  "token": user.generateJwt() });
         }
 
         // unknown user or wrong password
