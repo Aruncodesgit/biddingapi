@@ -10,6 +10,11 @@ const e = require('express');
 
 const jwt = require('jsonwebtoken');
  
+
+module.exports.testDetails = async (req, res, next) => { 
+    res.send('hello')
+} 
+
 // post register
 module.exports.user = async (req, res, next) => {
 
