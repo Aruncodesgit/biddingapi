@@ -21,7 +21,7 @@ app.use(express.urlencoded({extended: false}));
 app.use(bodyParser.json());
 app.use(cors());
 app.use(passport.initialize());  
-app.use('/', rtsIndex);
+app.use('/api', rtsIndex);
 app.set('view engine', 'ejs')
 app.use('/uploads', express.static('uploads')); 
 
