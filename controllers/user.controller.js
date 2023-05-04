@@ -12,7 +12,7 @@ const jwt = require('jsonwebtoken');
  
 
 module.exports.testDetails = async (req, res, next) => { 
-    res.send('hello')
+    res.send('hello from bidding api')
 } 
 
 // post register
