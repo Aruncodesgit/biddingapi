@@ -1,4 +1,4 @@
-const express = require('express');
+/* const express = require('express');
 const router = express.Router();
 const multer = require("multer");
 const jwtHelper = require('../config/jwtHelper'); 
@@ -54,7 +54,7 @@ router.get('/amountDetails', ctrlAmount.amountDetails);
 router.get('/amountById/:id', ctrlAmount.amountById);
 router.put('/updateAmount/:id', ctrlAmount.updateAmount);
 
-module.exports = router;
+module.exports = router; */
 
 
 
