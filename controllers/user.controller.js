@@ -41,10 +41,10 @@ module.exports.user = async (req, res, next) => {
  
 
 module.exports.userDetails = async (req, res, next) => {  
-    User.find((err, docs) => {
-        if (!err) { res.send(docs); }
-        else { console.log('Error' + Json.stringfy(err, undefined, 2)); }
-    });
+    // User.find((err, docs) => {
+    //     if (!err) { res.send(docs); }
+    //     else { console.log('Error' + Json.stringfy(err, undefined, 2)); }
+    // });
 }
 
  
