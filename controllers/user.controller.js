@@ -11,9 +11,7 @@ const e = require('express');
 const jwt = require('jsonwebtoken');
  
 
-module.exports.testDetails = async (req, res, next) => { 
-    res.send('hello from bidding api')
-} 
+ 
 
 // post register
 module.exports.user = async (req, res, next) => {

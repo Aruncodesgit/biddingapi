@@ -35,8 +35,7 @@ const ctrlPayment = require('./controllers/payment.controller');
 const ctrlAmount = require('./controllers/amounts.controller');
 
 
-
-app.get('/test', ctrlUser.testDetails);
+ 
 
 app.post('/member', ctrlUser.user);  
 app.get('/memberDetails', ctrlUser.userDetails);  
