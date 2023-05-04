@@ -1,9 +1,9 @@
 require('./config/config');
 require('./models/db');
 
-  
-const passport = require('passport');
 const express = require('express');
+const app = express();
+const passport = require('passport'); 
 const bodyParser = require('body-parser');
 const cors = require('cors');
 
@@ -12,8 +12,7 @@ const jwtHelper = require('./config/jwtHelper');
 require('./config/passportConfig');
 //const rtsIndex = require('./routes/index.router');
  
-
-var app = express();
+ 
 
 // middleware
 
