@@ -21,6 +21,9 @@ var biddingListSchema = new mongoose.Schema({
     tknUser: {
         type: String 
     }, 
+    roleType: {
+        type: String 
+    }, 
     amountInHand: {
         type: Number 
     },   

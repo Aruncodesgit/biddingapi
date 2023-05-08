@@ -37,6 +37,7 @@ module.exports.updateBiddingList = (req, res, next) => {
     var biddingList = { 
         tknAmount:req.body.tknAmount,
         tknUser:req.body.tknUser,
+        roleType:req.body.roleType,
         status:req.body.status,
         amountInHand:req.body.amountInHand
         
