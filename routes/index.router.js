@@ -28,7 +28,7 @@ const upload = multer({ storage: storage });
 // user register and login 
 router.post('/member', ctrlUser.user);  
 router.get('/memberDetails', ctrlUser.userDetails);  
-
+router.delete('/member/:id', ctrlUser.userDelete);
 router.post('/authenticate', ctrlUser.authenticate);
 router.get('/userProfile', jwtHelper.verifyJwtToken, ctrlUser.userProfile); 
 

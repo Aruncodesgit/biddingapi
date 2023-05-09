@@ -49,7 +49,17 @@ module.exports.userDetails = async (req, res, next) => {
     });
 }
 
- 
+ // delete register
+module.exports.userDelete = (req, res, next) => {
+    if (!ObjectId.isValid(req.params.id))
+        return res.status(400).send(`No record found with given id: ${req.params.id}`)
+
+    User.findByIdAndRemove(req.params.id, (err, docs) => {
+        if (!err) { res.send('Delted Successfully !'); }
+        else { console.log('Error' + Json.stringfy(err, undefined, 2)); }
+    })
+
+}
  
 
 // login authenticate
@@ -82,7 +92,7 @@ module.exports.userProfile = (req, res, next) => {
             else
                 return res.status(200).json({
                     status: true, user: _.pick(user, [
-                        '_id', 'fullName', 'email', 'phone'
+                        '_id', 'fullName', 'email', 'phone' , 'shortName'
 
                     ])
                 });
@@ -90,3 +100,4 @@ module.exports.userProfile = (req, res, next) => {
     );
 }
  
+
