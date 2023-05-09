@@ -21,8 +21,8 @@ var userSchema = new mongoose.Schema({
     }, 
     phone: {
         type: String,
-    }, 
-    role : {
+    },  
+    address : {
         type: String, 
     },
     date : {
