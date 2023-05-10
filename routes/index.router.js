@@ -34,6 +34,8 @@ router.post('/authenticate', ctrlUser.authenticate);
 router.get('/userProfile', jwtHelper.verifyJwtToken, ctrlUser.userProfile); 
 
 router.post('/joinBiding', ctrlJoin.joinBiding);
+router.get('/joinBidingDetails', ctrlJoin.joinBidingDetails);
+router.delete('/joinBiding/:id', ctrlJoin.joinBidingDelete);
 
 router.post('/bidding', ctrlBidding.bidding);  
 router.get('/biddingDetails', ctrlBidding.biddingDetails);   
