@@ -3,9 +3,9 @@ const JoinBidding = mongoose.model('JoinBidding');
 
 // post register
 module.exports.joinBiding = async (req, res, next) => {
-    var join = new JoinBidding();
-    join.id = req.body.id; 
-    join.save((err, doc) => {
+    var joinBidding= new JoinBidding();
+    joinBidding.memberId = req.body.memberId; 
+    joinBidding.save((err, doc) => {
         if (!err) {
             res.send(doc);
         }

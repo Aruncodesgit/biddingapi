@@ -2,8 +2,8 @@ const mongoose = require('mongoose');
  
 
 var joinBidding = new mongoose.Schema({  
-    id: {
-        type: Number 
+    memberId: {
+        type: String 
     } ,
     date : {
         type: Date,
