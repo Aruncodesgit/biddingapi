@@ -10,6 +10,7 @@ const ctrlBidding = require('../controllers/bidding.controller');
 const ctrlBiddingList = require('../controllers/biddingList.controller'); 
 const ctrlPayment = require('../controllers/payment.controller');
 const ctrlAmount = require('../controllers/amounts.controller');
+const ctrlJoin = require('../controllers/joinBidding.controller');
 
 const storage = multer.diskStorage({
 
@@ -31,6 +32,8 @@ router.get('/memberDetails', ctrlUser.userDetails);
 router.delete('/member/:id', ctrlUser.userDelete);
 router.post('/authenticate', ctrlUser.authenticate);
 router.get('/userProfile', jwtHelper.verifyJwtToken, ctrlUser.userProfile); 
+
+router.post('/joinBiding', ctrlJoin.joinBiding);
 
 router.post('/bidding', ctrlBidding.bidding);  
 router.get('/biddingDetails', ctrlBidding.biddingDetails);   
