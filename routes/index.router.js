@@ -35,7 +35,9 @@ router.get('/userProfile', jwtHelper.verifyJwtToken, ctrlUser.userProfile);
 router.post('/bidding', ctrlBidding.bidding);  
 router.get('/biddingDetails', ctrlBidding.biddingDetails);   
 router.post('/biddingTemp', ctrlBidding.biddingTemp);  
-router.get('/biddingTempDetails', ctrlBidding.biddingTempDetails);   
+router.get('/biddingTempDetails', ctrlBidding.biddingTempDetails);  
+
+router.get('/removebiddingTemp', ctrlBidding.removebiddingTemp);  
 
 router.post('/biddingList', ctrlBiddingList.biddingList);  
 router.get('/biddingsMerge', ctrlBiddingList.biddingsMerge);

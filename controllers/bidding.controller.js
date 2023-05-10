@@ -53,4 +53,7 @@ module.exports.biddingTempDetails = async (req, res, next) => {
     });
 }
 
+module.exports.removebiddingTemp = async (req, res, next) => {  
+    db.collection("biddingtemps").drop()
+}
   
