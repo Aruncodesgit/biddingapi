@@ -10,7 +10,13 @@ module.exports.joinBiding = async (req, res, next) => {
         if (!err) {
             res.send(doc);
         }
-
+        else { 
+            if (err.code == 11000)
+                res.status(422).send(['Duplicate ID Found']);
+                
+            else
+                return next(err); 
+        }
     });
    
 }
