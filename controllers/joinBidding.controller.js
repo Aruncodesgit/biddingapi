@@ -1,4 +1,5 @@
 const mongoose = require('mongoose'); 
+var ObjectId = require('mongodb').ObjectID; 
 const JoinBidding = mongoose.model('JoinBidding'); 
 
 // post register
@@ -6,6 +7,7 @@ module.exports.joinBiding = async (req, res, next) => {
     var joinBidding= new JoinBidding();
     joinBidding.fullName = req.body.fullName; 
     joinBidding.shortName = req.body.shortName; 
+    joinBidding.user_id = req._id; 
     joinBidding.save((err, doc) => {
         if (!err) {
             res.send(doc);
