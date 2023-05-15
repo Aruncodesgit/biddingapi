@@ -6,9 +6,8 @@ const JoinBidding = mongoose.model('JoinBidding');
 module.exports.joinBiding = async (req, res, next) => {
     var joinBidding= new JoinBidding();
     joinBidding.fullName = req.body.fullName; 
-    joinBidding.shortName = req.body.shortName; 
-    joinBidding.user_id = req._id; 
-    joinBidding.uniqueID = req.body.fullName + req._id;   
+    joinBidding.shortName = req.body.shortName;  
+    joinBidding.uniqueID = req.body.fullName + 'joined';   
     joinBidding.save((err, doc) => {
         if (!err) {
             res.send(doc);

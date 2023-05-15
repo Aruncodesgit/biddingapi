@@ -7,11 +7,7 @@ var joinBidding = new mongoose.Schema({
     } ,
     shortName: {
         type: String 
-    },
-    user_id :{
-        type: mongoose.Schema.Types.ObjectId, 
-        ref: "User" 
-    },
+    }, 
     uniqueID :{
         type: String, 
         required :true,
