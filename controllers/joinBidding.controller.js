@@ -8,6 +8,7 @@ module.exports.joinBiding = async (req, res, next) => {
     joinBidding.fullName = req.body.fullName; 
     joinBidding.shortName = req.body.shortName; 
     joinBidding.user_id = req._id; 
+    joinBidding.uniqueID = req.body.fullName + req._id;   
     joinBidding.save((err, doc) => {
         if (!err) {
             res.send(doc);
