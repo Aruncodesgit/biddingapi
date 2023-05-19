@@ -35,6 +35,9 @@ module.exports.updateBiddingList = (req, res, next) => {
         return res.status(400).send(` No record found with given id : ${req.params.id}`);
 
     var biddingList = { 
+        biddingNo:req.body.biddingNo,
+        amount:req.body.amount,
+        date:req.body.date,
         tknAmount:req.body.tknAmount,
         tknUser:req.body.tknUser,
         roleType:req.body.roleType,
@@ -61,6 +64,18 @@ module.exports.biddingListById = (req, res, next) => {
 }
 
 
+ // delete register
+ module.exports.biddingListDelete = (req, res, next) => {
+    if (!ObjectId.isValid(req.params.id))
+        return res.status(400).send(`No record found with given id: ${req.params.id}`)
+
+        BiddingList.findByIdAndRemove(req.params.id, (err, docs) => {
+        if (!err) { res.send('Delted Successfully !'); }
+        else { console.log('Error' + Json.stringfy(err, undefined, 2)); }
+    })
+
+}
+ 
 
 
  

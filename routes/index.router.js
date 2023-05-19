@@ -49,6 +49,8 @@ router.get('/biddingsMerge', ctrlBiddingList.biddingsMerge);
 router.get('/biddingListDetails', ctrlBiddingList.biddingListDetails);
 router.get('/biddingListById/:id', ctrlBiddingList.biddingListById);
 router.put('/updateBiddingList/:id', ctrlBiddingList.updateBiddingList);
+router.delete('/biddingListDelete/:id', ctrlBiddingList.biddingListDelete);
+
 
 router.post('/payment', jwtHelper.verifyJwtToken, ctrlPayment.payment);
 router.get('/paymentDetailsOwner', ctrlPayment.paymentDetailsOwner); 
