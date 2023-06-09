@@ -2,7 +2,7 @@ require('./config/config');
 require('./models/db');
 
 const express = require('express');
-const app = express();
+
 const passport = require('passport'); 
 const bodyParser = require('body-parser');
 const cors = require('cors');
@@ -11,7 +11,7 @@ require('./config/passportConfig');
 const rtsIndex = require('./routes/index.router');
  
  
-
+var app = express();
 // middleware
 
 // it used when we use ejs

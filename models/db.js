@@ -16,4 +16,5 @@ require('./biddingTemp.model');
 require('./biddingList.model'); 
 require('./payment.model'); 
 require('./amounts.model'); 
-require('./joinBidding.model'); 
+require('./joinBidding.model');
+require('./biddingStatus.model'); 

@@ -7,6 +7,7 @@ require('../config/passportConfig');
 
 const ctrlUser = require('../controllers/user.controller');  
 const ctrlBidding = require('../controllers/bidding.controller'); 
+const ctrlBiddingStatus = require('../controllers/biddingStatus.controller'); 
 const ctrlBiddingList = require('../controllers/biddingList.controller'); 
 const ctrlPayment = require('../controllers/payment.controller');
 const ctrlAmount = require('../controllers/amounts.controller');
@@ -41,8 +42,9 @@ router.post('/bidding', ctrlBidding.bidding);
 router.get('/biddingDetails', ctrlBidding.biddingDetails);   
 router.post('/biddingTemp', ctrlBidding.biddingTemp);  
 router.get('/biddingTempDetails', ctrlBidding.biddingTempDetails);  
-
 router.get('/removebiddingTemp', ctrlBidding.removebiddingTemp);  
+router.post('/biddingStatus', ctrlBiddingStatus.biddingStatus);  
+router.get('/biddingStatusDetails', ctrlBiddingStatus.biddingStatusDetails);   
 
 router.post('/biddingList', ctrlBiddingList.biddingList);  
 router.get('/biddingsMerge', ctrlBiddingList.biddingsMerge);
