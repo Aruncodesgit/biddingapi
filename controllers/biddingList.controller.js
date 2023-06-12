@@ -10,6 +10,7 @@ module.exports.biddingList = async (req, res, next) => {
     biddingList.biddingNo = req.body.biddingNo;   
     biddingList.amount = req.body.amount;  
     biddingList.date = req.body.date;  
+    biddingList.method = req.body.method;  
     biddingList.status = req.body.status;  
     biddingList.save((err, doc) => {
             if (!err) {

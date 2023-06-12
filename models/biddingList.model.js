@@ -12,6 +12,9 @@ var biddingListSchema = new mongoose.Schema({
     date: {
         type: String 
     }, 
+    method: {
+        type: String 
+    }, 
     status: {
         type: String 
     },  
