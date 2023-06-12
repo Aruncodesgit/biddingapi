@@ -7,8 +7,7 @@ var db = mongoose.connection;
 // post register
 module.exports.bidding = async (req, res, next) => { 
     var bidding = new Bidding();
-    bidding.chitNo = req.body.chitNo; 
-    bidding.chitName = req.body.chitName;  
+    bidding.chitNo = req.body.chitNo;  
     bidding.name = req.body.name; 
     bidding.role = req.body.role;  
     bidding.amount = req.body.amount;  
@@ -24,8 +23,7 @@ module.exports.bidding = async (req, res, next) => {
 
 module.exports.biddingTemp = async (req, res, next) => { 
     var biddingTemp = new BiddingTemp();
-    biddingTemp.chitNo = req.body.chitNo; 
-    biddingTemp.chitName = req.body.chitName;  
+    biddingTemp.chitNo = req.body.chitNo;  
     biddingTemp.name = req.body.name; 
     biddingTemp.role = req.body.role;  
     biddingTemp.amount = req.body.amount;  

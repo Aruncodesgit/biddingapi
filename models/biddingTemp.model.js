@@ -5,10 +5,7 @@ const jwt = require('jsonwebtoken');
 var biddingTempSchema = new mongoose.Schema({  
     chitNo: {
         type: Number 
-    }, 
-    chitName: {
-        type: String 
-    },
+    },  
     name: {
         type: String 
     }, 
